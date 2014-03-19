@@ -2,13 +2,13 @@ template(name="alerts")
 
     {{#with alert}}
 
-    div.alert(class="alert-{{type}}")
-        div.grid
-            div.g-row
-                div.g-c12
-                    span.icon
+    .alert(class="alert-{{type}}")
+        .grid
+            .g-row
+                .g-c12
+                    .icon
                     {{ message }}
-                    span.close
+                    .close
 
     {{/with}}
 
