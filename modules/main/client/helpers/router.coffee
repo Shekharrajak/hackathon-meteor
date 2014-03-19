@@ -1,49 +1,39 @@
 ### ------------------------------------------------------------------------------------------------------------------------
-Project: ******
+Project: EITS
 Designed by: Gentlemen https://gentlenode.com/
 Contact: studio(at)gentlenode.com
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-### Client > Alerts > Classic Functions
+### Client >> Router >> Configure
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-slideAlert = ->
-    alertSel = $('.alert')
-
-    clearTimeout timeout
-    timeout = setTimeout ->
-        alertSel.slideUp 400, ->
-            clearAlertSessions()
-    , 2500
-
-    alertSel.hide().slideDown()
+Router.configure
+    layoutTemplate: 'layout'
+    notFoundTemplate: 'notFound'
+    load: ->
+        $('html, body').animate { scrollTop: 0 }, 400
+        $('.content').hide().fadeIn 800
 
 
-clearAlertSessions = ->
-    $('.alert').slideUp 400, ->
-        Session.set 'alert', null
-
-
-### Client > Alerts > Rendered
+### Client >> Router >> Map
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-Template.alerts.rendered = -> 
-    slideAlert()
+Router.map ->
+    @route 'homepage', {
+        path: '/'
+    }
 
 
-### Client > Alerts > Helpers, Events
+### Client >> Router >> Filters
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-Template.alerts.helpers
-    alert: ->
-        Session.get('alert')
-
-
-Template.alerts.events
-    'click .close': (evt) ->
-        clearAlertSessions()
+# Must Be Sign In Filter
+Router.before ->
+    if !Meteor.userId()
+        @redirect 'homepage'
+, { except: ['homepage'] }
 
