@@ -1,4 +1,4 @@
-METEOR - Bootstrap
+METEOR - HACKATHON BOOTSTRAP
 =========================================
 
 
