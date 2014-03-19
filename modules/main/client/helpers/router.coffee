@@ -22,9 +22,8 @@ Router.configure
 
 
 Router.map ->
-    @route 'homepage', {
+    @route 'homepage',
         path: '/'
-    }
 
 
 ### Client >> Router >> Filters
