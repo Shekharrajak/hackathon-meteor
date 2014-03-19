@@ -1,0 +1,18 @@
+template(name="layout")
+
+    head
+        title Hackaton Meteor Bootstrap
+        meta(name="viewport", content="initial-scale=1.0")
+        link(rel="icon", sizes="16x16", href="/favicon.ico?v=2")
+
+    body
+        {{> alerts}}
+        {{> header}}
+
+        div.content
+            div.grid
+                div.row
+                    {{yield}}
+                    div.clear
+
+        {{> footer}}

@@ -1,0 +1,208 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+ * Project: EITS
+ * Designed by: Gentlemen https://gentlenode.com/
+ * Contact: studio@gentlenode.com
+ ------------------------------------------------------------------------------------------------------------------------ */
+ 
+
+/* Layout >> Buttons
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+ 
+.btn
+    padding: 8px 20px
+    border: 1px solid #c5c5c5
+    background: #f0f0f0
+    color: #757575
+    font-size: (13/16) * 1em
+    cursor: pointer
+    +background(linear-gradient(top, #ffffff, #f0f0f0))
+    +filter-gradient(#ffffff, #f0f0f0)
+    +text-shadow(#ffffff 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #bbbbbb
+        background: #eeeeee
+        +background(linear-gradient(top, #eeeeee, #eeeeee))
+        +filter-gradient(#eeeeee, #eeeeee)
+
+    &:active
+        +box-shadow(#cccccc 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #d8d8d8
+        background: #f9f9f9
+        +filter-gradient(#f9f9f9, #f9f9f9)
+        +box-shadow(none)
+        +opacity(0.8)
+        cursor: not-allowed
+
+
+a.btn
+    text-decoration: none
+
+
+.btn-tiny
+    padding: 4px 8px
+    font-size: (11/16) * 1em
+
+
+.btn-small
+    padding: 5px 10px
+    font-size: (12/16) * 1em
+
+
+.btn-large
+    padding: 10px 22px
+    font-size: (14/16) * 1em
+
+
+.btn-primary
+    border: 1px solid #32528a
+    background: #5a9cd6
+    color: #ffffff
+    +background(linear-gradient(top, #5a9cd6, #416cba))
+    +filter-gradient(#5a9cd6, #416cba)
+    +box-shadow(#a2ccf0 0 1px 0 0 inset)
+    +text-shadow(#152946 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #304f86
+        background: #4875c4
+        +filter-gradient(#4875c4, #4875c4)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#395a96 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #395fa2
+        background: #5083db
+        +filter-gradient(#5083db, #5083db)
+        +box-shadow(none)
+
+
+.btn-info
+    border: 1px solid #1a7eb8
+    background: #48bdf8
+    color: #ffffff
+    +background(linear-gradient(top, #48bdf8, #429dd1))
+    +filter-gradient(#48bdf8, #429dd1)
+    +box-shadow(#a5e0ff 0 1px 0 0 inset)
+    +text-shadow(#115379 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #1977ad
+        background: #46a4da
+        +filter-gradient(#46a4da, #46a4da)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#1e83bd 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #1d8bca
+        background: #4cb5ef
+        +filter-gradient(#4cb5ef, #4cb5ef)
+        +box-shadow(none)
+
+
+.btn-success
+    border: 1px solid #788d44
+    background: #b6cf61
+    color: #ffffff
+    +background(linear-gradient(top, #b6cf61, #8bab49))
+    +filter-gradient(#b6cf61, #8bab49)
+    +box-shadow(#c1de6c 0 1px 0 0 inset)
+    +text-shadow(#353e1f 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #5c6b36
+        background: #87a947
+        +filter-gradient(#87a947, #87a947)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#6c863a 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #768845
+        background: #9cc352
+        +filter-gradient(#9cc352, #9cc352)
+        +box-shadow(none)
+
+
+.btn-warning
+    border: 1px solid #cb8016
+    background: #fab047
+    color: #ffffff
+    +background(linear-gradient(top, #fab047, #e39323))
+    +filter-gradient(#fab047, #e39323)
+    +box-shadow(#fed9a5 0 1px 0 0 inset)
+    +text-shadow(#543408 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #aa6c14
+        background: #e49424
+        +filter-gradient(#e49424, #e49424)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#aa6c14 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #c77e17
+        background: #fca227
+        +filter-gradient(#fca227, #fca227)
+        +box-shadow(none)
+
+
+.btn-danger, .badge-red, .label-red
+    border: 1px solid #943834
+    background: #e65f59
+    color: #ffffff
+    +background(linear-gradient(top, #e65f59, #c24b46))
+    +filter-gradient(#e65f59, #c24b46)
+    +box-shadow(#f79894 0 1px 0 0 inset)
+    +text-shadow(#6c2320 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #772e2b
+        background: #c64e49
+        +filter-gradient(#c64e49, #c64e49)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#6f2b28 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #a33e3a
+        background: #e25853
+        +filter-gradient(#e25853, #e25853)
+        +box-shadow(none)
+
+
+.btn-inverse
+    border: 1px solid #101010
+    background: #505050
+    color: #ffffff
+    +background(linear-gradient(top, #505050, #353535))
+    +filter-gradient(#505050, #353535)
+    +box-shadow(#858585 0 1px 0 0 inset)
+    +text-shadow(#000000 1px 1px 1px)
+
+    &:hover
+        border: 1px solid #000000
+        background: #353535
+        +filter-gradient(#353535, #353535)
+        +box-shadow(none)
+
+    &:active
+        +box-shadow(#000000 0 3px 8px inset)
+
+    &:disabled
+        border: 1px solid #313131
+        background: #4e4e4e
+        +filter-gradient(#4e4e4e, #4e4e4e)
+        +box-shadow(none)
+

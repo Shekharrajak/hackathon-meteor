@@ -1,0 +1,42 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+ * Project: EITS
+ * Designed by: Gentlemen https://gentlenode.com/
+ * Contact: studio@gentlenode.com
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Layout >> Mixins
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+
+@mixin sprite-background-simple($sprite, $name)
+    background-image: sprite-url($sprite)
+    background-position: sprite-position($sprite, $name)
+    background-repeat: no-repeat
+    height: image-height(sprite-file($sprite, $name))
+    width: image-width(sprite-file($sprite, $name))
+
+
+@mixin sprite-background($sprite, $name)
+    display: inline-block
+    +sprite-background-simple($sprite, $name)
+
+
+@mixin input-placeholder
+    &.placeholder
+        @content
+
+    &:-moz-placeholder 
+        @content
+        opacity: 1
+
+    &::-moz-placeholder
+        @content
+        opacity: 1
+
+    &:-ms-input-placeholder
+        @content
+
+    &::-webkit-input-placeholder
+        @content
+

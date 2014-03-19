@@ -1,0 +1,90 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+ * Project: Hackaton Meteor Bootstrap
+ * Designed by: Gentlemen https://gentlenode.com/
+ * Contact: studio@gentlenode.com
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Layout >> Alerts
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+
+.alert
+    position: fixed
+    z-index: 100
+    width: 100%
+    bottom: 0
+    padding: 10px 0
+    border-top: 1px solid #dab56e
+    border-bottom: 1px solid #dab56e
+    background-color: #fdd486
+    color: #877044
+    font-size: (14/16) * 1em
+    +box-shadow(#feefc7 0 1px 0 0 inset)
+    +text-shadow(#ffffff 1px 1px 1px)
+    +opacity(0.98)
+
+    a
+        text-decoration: underline
+
+    .icon
+        float: left
+        margin: 3px 10px 0 0
+        +sprite-background($main, 'alert-icon')
+
+    .close
+        float: right
+        margin: 3px 0 0 40px
+        cursor: pointer
+        +sprite-background($main, 'alert-close')
+
+
+.alert-success
+    border-top-color: #778b43
+    border-bottom-color: #778b43
+    background-color: #b6cf61
+    color: #ffffff
+    +box-shadow(#c6e36b 0 1px 0 0 inset)
+    +text-shadow(#4c592a 1px 1px 1px)
+
+    .icon
+        +sprite-background($main, 'alert-icon-success')
+
+    .close
+        +sprite-background($main, 'alert-close-success')
+
+
+.alert-warning
+    border-top-color: #c68223
+    border-bottom-color: #c68223
+    background-color: #ffbe40
+    color: #ffffff
+    +box-shadow(#ffe5ae 0 1px 0 0 inset)
+    +text-shadow(#633d07 1px 1px 1px)
+
+    .icon
+        +sprite-background($main, 'alert-icon-warning')
+
+    .close
+        +sprite-background($main, 'alert-close-warning')
+
+
+.alert-error
+    border-top-color: #8d312d
+    border-bottom-color: #8d312d
+    background-color: #e16660
+    color: #ffffff
+    +box-shadow(#feb3b0 0 1px 0 0 inset)
+    +text-shadow(#731f1c 1px 1px 1px)
+
+    .icon
+        +sprite-background($main, 'alert-icon-error')
+
+    .close
+        +sprite-background($main, 'alert-close-error')
+
+
+.alert-success, .alert-warning, .alert-error
+    a
+        color: #ffffff
+
