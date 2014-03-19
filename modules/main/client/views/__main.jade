@@ -1,4 +1,4 @@
-template(name="layout")
+template(name="Layout")
 
     head
         title Hackaton Meteor Bootstrap
@@ -6,8 +6,8 @@ template(name="layout")
         link(rel="icon", sizes="16x16", href="/favicon.ico?v=2")
 
     body
-        {{> alerts}}
-        {{> header}}
+        {{> Alerts}}
+        {{> Header}}
 
         .content
             .grid
@@ -15,4 +15,4 @@ template(name="layout")
                     {{yield}}
                     .clear
 
-        {{> footer}}
+        {{> Footer}}

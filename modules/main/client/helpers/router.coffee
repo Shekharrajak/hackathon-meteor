@@ -10,8 +10,8 @@ Contact: studio(at)gentlenode.com
 
 
 Router.configure
-    layoutTemplate: 'layout'
-    notFoundTemplate: 'notFound'
+    layoutTemplate: 'Layout'
+    notFoundTemplate: 'NotFound'
     load: ->
         $('html, body').animate { scrollTop: 0 }, 400
         $('.content').hide().fadeIn 800
@@ -22,7 +22,7 @@ Router.configure
 
 
 Router.map ->
-    @route 'homepage',
+    @route 'Homepage',
         path: '/'
 
 
@@ -33,6 +33,6 @@ Router.map ->
 # Must Be Sign In Filter
 Router.before ->
     if !Meteor.userId()
-        @redirect 'homepage'
-, { except: ['homepage'] }
+        @redirect 'Homepage'
+, { except: ['Homepage'] }
 
