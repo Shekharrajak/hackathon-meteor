@@ -5,6 +5,41 @@
  ------------------------------------------------------------------------------------------------------------------------ */
 
 
+/* Layout >> Common > Responsive
+ ------------------------------------------------------------------------------------------------------------------------ */
+
+
+.small-tablet, .small-tablet-o, .tablet, .tablet-o, .desktop
+    display: none
+
+
+/* For Small Tablet & Beyond */
+@media screen and (min-width: 599px)
+    .small-tablet, .small-tablet-o
+        display: block
+
+    .mobile-o
+        display: none
+
+
+/* For Tablet & Beyond */
+@media screen and (min-width: 767px)
+    .tablet, .tablet-o
+        display: block
+
+    small-tablet-o
+        display: none
+
+
+/* For Desktop & Beyond */
+@media screen and (min-width: 1279px)
+    .desktop
+        display: block
+
+    tablet-o
+        display: none
+
+
 /* Layout >> Common > Typography
  ------------------------------------------------------------------------------------------------------------------------ */
 
