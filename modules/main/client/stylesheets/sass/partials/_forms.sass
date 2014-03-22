@@ -10,37 +10,37 @@
 
 
 input, textarea
-    width: 250px
-    padding: 9px 18px
-    border: 1px solid $darkBorderColor
+    padding: 10px 20px
+    border: 1px solid #d6d6d6
     background-color: #ffffff
-    color: $black
-    font-family: "OpenSans", sans-serif
-    font-size: (13/16) * 1em
-    outline: 0
+    color: $grey
+    font-size: (15/16) * 1em
     +box-shadow(1px 1px 3px $lightBoxShadow)
 
-    &:-webkit-autofill
-        color: $grey
-        -webkit-box-shadow: 0 0 0px 1000px white inset
+    &:focus
+        outline: 0 none
 
     &.success
         border-color: $green
+
         +input-placeholder
             color: $green
 
     &.invalid
         border-color: $red
+
         +input-placeholder
             color: $red
 
     &.warning
         border-color: $orange
+
         +input-placeholder
             color: $orange
 
     &.checking
         border-color: $blue
+
         +input-placeholder
             color: $blue
 
@@ -56,7 +56,8 @@ textarea
 
 
 button, select
-    outline: 0
+    &:focus
+        outline: 0 none
 
 
 .input-small
