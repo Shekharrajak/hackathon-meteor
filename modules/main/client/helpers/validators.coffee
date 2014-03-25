@@ -10,115 +10,129 @@ Contact: studio(at)gentlenode.com
 
 
 class HelpersValidators
-    isNotEmpty: (value, message) ->
-        not_empty = false
-
-        try
-            if value and value isnt ''
-                not_empty = true
-            else if message
-                __.HelpersAlerts.slide_alert 'error', 'Please fill in all required fields.'
-        catch error
-            Console.error 'HelpersValidators.is_not_empty', error
-        finally
-            return not_empty
+    trimInput: (value) ->
+        return (if value then value.replace /^\s*|\s*$/g, '' else value)
 
 
-    isEmail: (value, message) ->
+    isNotEmpty: (value, message=true) ->
+        notEmpty = false
+
+        if value and value isnt ''
+            notEmpty = true
+        else if message
+            Session.set 'alert', { type: 'error', message: 'Please fill in all required fields.' }
+
+        return notEmpty
+
+
+    isEmail: (value, message=true) ->
         email = false
 
-        try
-            filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+        filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
 
-            if filter.test value
-                email = true
-            else if message
-                __.HelpersAlerts.slide_alert 'error', 'Please enter a valid email address.'
-        catch error
-            Console.error 'HelpersValidators.is_email', error
-        finally
-            return email
+        if filter.test value
+            email = true
+        else if message
+            Session.set 'alert', { type: 'error', message: 'Please enter a valid email address.' }
+
+        return email
 
 
-    isValidPassword: (value, message) ->
-        valid_password = false
+    isValidPassword: (value, message=true) ->
+        validPassword = false
 
-        try
-            if value.length >= 6
-                valid_password = true
-            else if message
-                __.HelpersAlerts.slide_alert 'error', 'Your password should be 6 characters or longer.'
-        catch error
-            Console.error 'HelpersValidators.is_valid_password', error
-        finally
-            return valid_password
+        if value.length >= 6
+            validPassword = true
+        else if message
+            Session.set 'alert', { type: 'error', message: 'Your password should be 6 characters or longer.' }
+
+        return validPassword
 
 
-    isFacebookPage: (value, message) ->
-        facebook_page = false
+    areValidPasswords: (password, confirm) ->
+        if not @isValidPassword password
+            return false
 
-        try
-            filter = /^(http|https):\/\/(www\.)?facebook.com\/([a-zA-Z0-9.-\/]{1,})/;
+        if password isnt confirm
+            Session.set 'alert', { type: 'error', message: 'Your two passwords are not equivalent.' }
+            return false
 
-            if filter.test value
-                facebook_page = true
-            else if message
-                __.HelpersAlerts.slide_alert 'error', 'Please enter a valid facebook page.'
-        catch error
-            Console.error 'HelpersValidators.is_facebook_page', error
-        finally
-            return facebook_page
+        return true
 
 
-    checkingInput: (selector, first_condition, second_condition, type) ->
-        try
-            if not first_condition
-                selector.removeClass 'invalid'
-                selector.removeClass type
-            else if not second_condition
-                selector.addClass 'invalid'
-                selector.removeClass type
-            else
-                selector.addClass type
-                selector.removeClass 'invalid'
-        catch error
-            Console.error 'HelpersValidators.checking_input', error
-        finally
-            return true
+    isFacebookPage: (value, message=true) ->
+        facebookPage = false
+
+        filter = /^(http|https):\/\/(www\.)?facebook.com\/([a-zA-Z0-9.-\/]{1,})/
+
+        if filter.test value
+            facebookPage = true
+        else if message
+            Session.set 'alert', { type: 'error', message: 'Please enter a valid facebook page.' }
+
+        return facebookPage
 
 
-    checkingPasswords: (password_sel, password_confirm_sel) ->
-        try
-            password = password_sel.val()
-            password_confirm = password_confirm_sel.val()
+    checkingInput: (selector, firstCondition, secondCondition, type) ->
+        if not firstCondition
+            selector.removeClass 'invalid'
+            selector.removeClass type
+        else if not secondCondition
+            selector.addClass 'invalid'
+            selector.removeClass type
+        else
+            selector.addClass type
+            selector.removeClass 'invalid'
 
-            first_condition = (this.is_not_empty password, false) or (this.is_not_empty password_confirm, false)
-            second_condition = password is password_confirm and (this.is_valid_password password, false) and (this.is_valid_password password_confirm, false)
+        return true
 
-            this.checking_input password_sel, first_condition, second_condition, 'success'
-            this.checking_input password_confirm_sel, first_condition, second_condition, 'success'
-        catch error
-            Console.error 'HelpersValidators.checking_passwords', error
-        finally
-            return true
+
+    checkingPasswords: (passwordSel, passwordConfirmSel) ->
+        password = passwordSel.val()
+        passwordConfirm = passwordConfirmSel.val()
+
+        firstCondition = (@isNotEmpty password, false) or (@isNotEmpty passwordConfirm, false)
+        secondCondition = password is passwordConfirm and (@isValidPassword password, false) and (@isValidPassword passwordConfirm, false)
+
+        @checkingInput passwordSel, firstCondition, secondCondition, 'success'
+        @checkingInput passwordConfirmSel, firstCondition, secondCondition, 'success'
+
+        return true
 
 
     blockForm: (selector) ->
-        try
-            selector.find('input[type=submit]').attr 'disabled', true
-        catch error
-            Console.error 'HelpersValidators.block_form', error
-        finally
-            return true
+        selector.find('input[type=submit]').attr 'disabled', true
+        return true
 
 
     unblockForm: (selector) ->
-        try
-            selector.find('input[type=submit]').attr 'disabled', false
-        catch error
-            Console.error 'HelpersValidators.unblock_form', error
-        finally
-            return true
+        selector.find('input[type=submit]').attr 'disabled', false
+        return true
+
+
+    redify: (selector) ->
+        selector.find('input[type=text], input[type=password]').addClass 'invalid'
+        return true
+
+
+    rumble: (selector, evt, color) ->
+        selector.jrumble(
+            x: 5
+            y: 0
+            rotation: 0
+            speed: 25
+            opacity: true
+            opacityMin: 0.75
+        ).trigger 'startRumble'
+
+        setTimeout (-> selector.trigger('stopRumble')), 500
+
+        if color is 'red'
+            @redify selector
+
+        @unblockForm selector
+
+        return true
 
 
 @HelpersValidators = new HelpersValidators
