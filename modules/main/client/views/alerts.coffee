@@ -26,7 +26,7 @@ clearAlertSessions = ->
         Session.set 'alert', null
 
 
-### Client > Alerts > Rendered
+### Client > Alerts
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
@@ -34,13 +34,9 @@ Template.alerts.rendered = ->
     slideAlert()
 
 
-### Client > Alerts > Helpers, Events
------------------------------------------------------------------------------------------------------------------------- ###
-
-
 Template.alerts.helpers
     alert: ->
-        Session.get('alert')
+        Session.get 'alert'
 
 
 Template.alerts.events

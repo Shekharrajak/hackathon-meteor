@@ -115,7 +115,7 @@ class HelpersValidators
         return true
 
 
-    rumble: (selector, evt, color) ->
+    rumble: (selector, color=false) ->
         selector.jrumble(
             x: 5
             y: 0
