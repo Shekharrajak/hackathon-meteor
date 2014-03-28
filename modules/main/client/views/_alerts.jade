@@ -1,9 +1,14 @@
 template(name="Alerts")
 
     with alert
-        .alert(class="alert-#{type}")
-            .grid: .g-row: .g-c12
-                .icon
-                = message
-                .close
+        +AlertsInner
+
+
+template(name="AlertsInner")
+
+    .alert(class="alert-#{type}")
+        .grid: .g-row: .g-c12
+            span.icon
+            = message
+            span.close
 

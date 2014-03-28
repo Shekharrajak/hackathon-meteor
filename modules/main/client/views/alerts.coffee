@@ -10,13 +10,13 @@ Contact: studio(at)gentlenode.com
 
 
 slideAlert = ->
-    alertSel = $('.alert')
+    alertSel = $ '.alert'
 
     clearTimeout timeout
     timeout = setTimeout ->
         alertSel.slideUp 400, ->
             clearAlertSessions()
-    , 2500
+    , 4000
 
     alertSel.hide().slideDown()
 
@@ -30,16 +30,20 @@ clearAlertSessions = ->
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-Template.alerts.rendered = -> 
-    slideAlert()
-
-
-Template.alerts.helpers
+Template.Alerts.helpers
     alert: ->
         Session.get 'alert'
 
 
-Template.alerts.events
+Template.Alerts.events
     'click .close': (evt) ->
         clearAlertSessions()
+
+
+### Client > Alerts Inner
+------------------------------------------------------------------------------------------------------------------------ ###
+
+
+Template.AlertsInner.rendered = -> 
+    slideAlert()
 
