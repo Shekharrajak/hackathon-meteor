@@ -10,7 +10,7 @@ Contact: studio(at)gentlenode.com
 
 
 Router.configure
-    layoutTemplate: 'Layout'
+    layoutTemplate: 'Main'
     notFoundTemplate: 'NotFound'
     load: ->
         $('html, body').animate { scrollTop: 0 }, 400
@@ -30,7 +30,7 @@ Router.map ->
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-Router.before ->
+Router.onBeforeAction ->
     if !Meteor.userId()
         @redirect 'Homepage'
 , { except: ['Homepage'] }

@@ -9,5 +9,5 @@ accounts-base
 accounts-password
 iron-router
 email
-belt-jade-handlebars
 handlebar-helpers
+jade

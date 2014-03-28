@@ -3,27 +3,29 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
-      "belt-jade-handlebars": {
-        "git": "https://github.com/meteorbelt/belt-jade-handlebars",
-        "tag": "v0.1.0"
-      },
-      "handlebar-helpers": {}
+      "handlebar-helpers": {},
+      "jade": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.4",
-        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
-      },
-      "belt-jade-handlebars": {
-        "git": "https://github.com/meteorbelt/belt-jade-handlebars",
-        "tag": "v0.1.0",
-        "commit": "d1f6189203401b677e22c7ef7d171b33185b5e2e"
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
       },
       "handlebar-helpers": {
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
-        "tag": "v0.0.9",
-        "commit": "71e94c99462b8801a34c5363510758b6ff5f5ac7"
+        "tag": "v0.1.1",
+        "commit": "0b407ab65e7c1ebd53d71aef0de2e2c1d21a597c"
+      },
+      "jade": {
+        "git": "https://github.com/mquandalle/meteor-jade.git",
+        "tag": "v0.2.0",
+        "commit": "b0273abb6f13316c335f60bdedc0ee1026748058"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       }
     }
   }

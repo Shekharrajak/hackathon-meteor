@@ -9,10 +9,10 @@ Contact: studio(at)gentlenode.com
 ------------------------------------------------------------------------------------------------------------------------ ###
 
 
-Handlebars.registerHelper 'isLogged', () ->
+UI.registerHelper 'isLogged', () ->
     if Meteor.userId() then 'isLogged' else 'isNotLogged'
 
 
-Handlebars.registerHelper 'isHomepage', () ->
+UI.registerHelper 'isHomepage', () ->
     if window.location.pathname is '/' then 'isHomepage' else 'isNotHomepage'
 

@@ -1,14 +1,9 @@
 template(name="Alerts")
 
-    {{#with alert}}
-
-    .alert(class="alert-{{type}}")
-        .grid
-            .g-row
-                .g-c12
-                    .icon
-                    {{ message }}
-                    .close
-
-    {{/with}}
+    with alert
+        .alert(class="alert-#{type}")
+            .grid: .g-row: .g-c12
+                .icon
+                = message
+                .close
 
