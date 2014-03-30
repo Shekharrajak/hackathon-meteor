@@ -1,12 +1,11 @@
-### ------------------------------------------------------------------------------------------------------------------------
+###
 Project: ******
 Designed by: Gentlemen https://gentlenode.com/
 Contact: studio(at)gentlenode.com
------------------------------------------------------------------------------------------------------------------------- ###
+###
 
 
-### Client > Alerts > Classic Functions
------------------------------------------------------------------------------------------------------------------------- ###
+# Client > Alerts > Classic Functions
 
 
 slideAlert = ->
@@ -26,8 +25,7 @@ clearAlertSessions = ->
         Session.set 'alert', null
 
 
-### Client > Alerts
------------------------------------------------------------------------------------------------------------------------- ###
+# Client > Alerts
 
 
 Template.Alerts.helpers
@@ -40,8 +38,7 @@ Template.Alerts.events
         clearAlertSessions()
 
 
-### Client > Alerts Inner
------------------------------------------------------------------------------------------------------------------------- ###
+# Client > Alerts Inner
 
 
 Template.AlertsInner.rendered = -> 
