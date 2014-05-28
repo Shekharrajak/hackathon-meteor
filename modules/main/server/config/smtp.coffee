@@ -1,8 +1,4 @@
-###
-Project: ******
-Designed by: Gentlemen https://gentlenode.com/
-Contact: studio(at)gentlenode.com
-###
+# Copyright (c) 2014 by Gentlenode. All Rights Reserved.
 
 
 # Server > SMTP
@@ -16,4 +12,3 @@ Meteor.startup ->
         port: 587
 
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
-

@@ -1,6 +1,1 @@
-###
-Project: ******
-Designed by: Gentlemen https://gentlenode.com/
-Contact: studio(at)gentlenode.com
-###
-
+# Copyright (c) 2014 by Gentlenode. All Rights Reserved.

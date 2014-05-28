@@ -1,46 +1,41 @@
-###
-Project: ******
-Designed by: Gentlemen https://gentlenode.com/
-Contact: studio(at)gentlenode.com
-###
+# Copyright (c) 2014 by Gentlenode. All Rights Reserved.
 
 
 # Client > Alerts > Classic Functions
 
 
 slideAlert = ->
-    alertSel = $ '.alert'
+  alertSel = $ '.alert'
 
-    clearTimeout timeout
-    timeout = setTimeout ->
-        alertSel.slideUp 400, ->
-            clearAlertSessions()
-    , 4000
+  clearTimeout timeout
+  timeout = setTimeout ->
+    alertSel.slideUp 400, ->
+      clearAlertSessions()
+  , 4000
 
-    alertSel.hide().slideDown()
+  alertSel.hide().slideDown()
 
 
 clearAlertSessions = ->
-    $('.alert').slideUp 400, ->
-        Session.set 'alert', null
+  $('.alert').slideUp 400, ->
+    Session.set 'alert', null
 
 
 # Client > Alerts
 
 
 Template.Alerts.helpers
-    alert: ->
-        Session.get 'alert'
+  alert: ->
+    Session.get 'alert'
 
 
 Template.Alerts.events
-    'click .close': (evt) ->
-        clearAlertSessions()
+  'click .close': (evt) ->
+    clearAlertSessions()
 
 
 # Client > Alerts Inner
 
 
-Template.AlertsInner.rendered = -> 
-    slideAlert()
-
+Template.AlertsInner.rendered = ->
+  slideAlert()
