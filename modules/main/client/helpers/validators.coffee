@@ -55,19 +55,6 @@ class HelpersValidators
     return true
 
 
-  isFacebookPage: (value, message=true) ->
-    facebookPage = false
-
-    filter = /^(http|https):\/\/(www\.)?facebook.com\/([a-zA-Z0-9.-\/]{1,})/
-
-    if filter.test value
-      facebookPage = true
-    else if message
-      Session.set 'alert', { type: 'error', message: 'Please enter a valid facebook page.' }
-
-    return facebookPage
-
-
   checkingInput: (selector, firstCondition, secondCondition, type) ->
     if not firstCondition
       selector.removeClass 'invalid'
@@ -100,13 +87,17 @@ class HelpersValidators
     return true
 
 
-  unblockForm: (selector) ->
+  unblockForm: (selector, remove=false) ->
+    if remove is true
+      selector.find('input, textarea').removeClass 'invalid'
+
     selector.find('input[type=submit]').attr 'disabled', false
     return true
 
 
   redify: (selector) ->
-    selector.find('input[type=text], input[type=password]').addClass 'invalid'
+    selector.find(
+      'input[type=text], input[type=password], textarea').addClass 'invalid'an
     return true
 
 
