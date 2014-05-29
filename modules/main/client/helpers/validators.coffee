@@ -87,7 +87,10 @@ class HelpersValidators
     return true
 
 
-  unblockForm: (selector, remove=false) ->
+  unblockForm: (selector, clear=false, remove=false) ->
+    if clear is true
+      selector[0].reset()
+
     if remove is true
       selector.find('input, textarea').removeClass 'invalid'
 
@@ -97,7 +100,7 @@ class HelpersValidators
 
   redify: (selector) ->
     selector.find(
-      'input[type=text], input[type=password], textarea').addClass 'invalid'an
+      'input[type=text], input[type=password], textarea').addClass 'invalid'
     return true
 
 
