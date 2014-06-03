@@ -34,7 +34,7 @@ Template.Alerts.events
     clearAlertSessions()
 
 
-# Client > Alerts Inner
+# Client > Alerts > Inner
 
 
 Template.AlertsInner.rendered = ->
