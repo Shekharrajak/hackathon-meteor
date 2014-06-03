@@ -1,10 +1,2 @@
-METEOR - HACKATHON BOOTSTRAP
-=========================================
-
-
-" THERE IS IN EVERY SEED, THE PROMISE OF A GIANT. "
-
-“ DON’T EVER LET THE PLACE YOU START DICTATE WHERE YOU FINISH. “
-
-
-GENTLENODE STUDIO.
+GENTLENODE | METEOR & GROWTH HACKING STUDIO
+================================================
