@@ -2,6 +2,8 @@
   "packages": {
     "iron-router": {},
     "handlebar-helpers": {},
-    "jade": {}
+    "jade": {},
+    "fast-render": {},
+    "sitemaps": {}
   }
 }
