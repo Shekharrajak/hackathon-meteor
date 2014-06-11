@@ -20,7 +20,7 @@ Router.map ->
     path: '/'
 
 
-# Both >> Router >> Filters
+# Both >> Router >> Hooks
 
 
 Router.onBeforeAction ->

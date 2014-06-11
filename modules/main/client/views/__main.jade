@@ -1,55 +1,54 @@
 //- Copyright (c) 2014 by Gentlenode. All Rights Reserved.
 
 
+head
+    title Hackaton Meteor Bootstrap
+
+    //- Classic Meta Tags
+    meta(name='description', content='')
+    meta(name='fragment', content='!')
+    meta(name='viewport', content='initial-scale=1.0')
+
+    //- Open Graph Meta Tags
+    meta(name='og:type', content='website')
+    meta(name='og:title', content='')
+    meta(name='og:description', content='')
+    meta(name='og:site_name', content='')
+    meta(name='og:url', content='')
+    meta(name='og:image', content='')
+    meta(name='fb:admins', content='')
+
+    //- Twitter Card Meta Tags
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:title', content='')
+    meta(name='twitter:description', content='')
+    meta(name='twitter:image', content='')
+    meta(name='twitter:site', content='')
+    meta(name='twitter:creator', content='')
+
+    //- Favicons
+    link(rel='icon', href='/favicon.png?v=2', type='image/png')
+    link(rel='icon', href='/favicon-32x32.png?v=2', sizes='32x32', type='image/png')
+    link(rel='icon', href='/favicon-128x128.png?v=2', sizes='128x128', type='image/png')
+    link(rel='icon', href='/favicon-256x256.png?v=2', sizes='256x256', type='image/png')
+    link(rel='icon', href='/favicon-512x512.png?v=2', sizes='512x512', type='image/png')
+
+    link(rel='apple-touch-icon', href='/apple-touch-icon.png?v=2', type='image/png')
+    link(rel='apple-touch-icon', href='/apple-touch-icon-72x72.png?v=2', sizes='72x72', type='image/png')
+    link(rel='apple-touch-icon', href='/apple-touch-icon-114x114.png?v=2', sizes='114x114', type='image/png')
+    link(rel='apple-touch-icon', href='/apple-touch-icon-144x144.png?v=2', sizes='144x144', type='image/png')
+
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><![endif]-->
+
+    //- External Resources
+    link(href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+
+
 template(name="Main")
+  +Alerts
+  +Header
 
-    head
-        title Hackaton Meteor Bootstrap
+  .content: .grid: .row
+    +yield
 
-        //- Classic Meta Tags
-        meta(name='description', content='')
-        meta(name='fragment', content='!')
-        meta(name='viewport', content='initial-scale=1.0')
-
-        //- Open Graph Meta Tags
-        meta(name='og:type', content='website')
-        meta(name='og:title', content='')
-        meta(name='og:description', content='')
-        meta(name='og:site_name', content='')
-        meta(name='og:url', content='')
-        meta(name='og:image', content='')
-        meta(name='fb:admins', content='')
-
-        //- Twitter Card Meta Tags
-        meta(name='twitter:card', content='summary')
-        meta(name='twitter:title', content='')
-        meta(name='twitter:description', content='')
-        meta(name='twitter:image', content='')
-        meta(name='twitter:site', content='')
-        meta(name='twitter:creator', content='')
-
-        //- Favicons
-        link(rel='icon', href='/favicon.png?v=2', type='image/png')
-        link(rel='icon', href='/favicon-32x32.png?v=2', sizes='32x32', type='image/png')
-        link(rel='icon', href='/favicon-128x128.png?v=2', sizes='128x128', type='image/png')
-        link(rel='icon', href='/favicon-256x256.png?v=2', sizes='256x256', type='image/png')
-        link(rel='icon', href='/favicon-512x512.png?v=2', sizes='512x512', type='image/png')
-
-        link(rel='apple-touch-icon', href='/apple-touch-icon.png?v=2', type='image/png')
-        link(rel='apple-touch-icon', href='/apple-touch-icon-72x72.png?v=2', sizes='72x72', type='image/png')
-        link(rel='apple-touch-icon', href='/apple-touch-icon-114x114.png?v=2', sizes='114x114', type='image/png')
-        link(rel='apple-touch-icon', href='/apple-touch-icon-144x144.png?v=2', sizes='144x144', type='image/png')
-
-        <!--[if IE]><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><![endif]-->
-
-        //- External Resources
-        link(href='https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
-
-    body
-        +Alerts
-        +Header
-
-        .content: .grid: .row
-            +yield
-
-        +Footer
+  +Footer
