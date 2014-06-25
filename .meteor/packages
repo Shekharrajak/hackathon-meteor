@@ -3,13 +3,19 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+# Meteor packages
 standard-app-packages
-coffeescript
 accounts-base
 accounts-password
-iron-router
+coffeescript
 email
-handlebar-helpers
-jade
 jquery
 spiderable
+
+# Atmosphere packages
+blaze-layout
+fast-render
+handlebar-helpers
+iron-router
+jade
+sitemaps
