@@ -18,12 +18,3 @@ Router.configure
 Router.map ->
   @route 'Homepage',
     path: '/'
-
-
-# Both >> Router >> Hooks
-
-
-Router.onBeforeAction ->
-  if !Meteor.userId()
-    @redirect 'Homepage'
-, { except: ['Homepage'] }
