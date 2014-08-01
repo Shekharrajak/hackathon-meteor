@@ -13,9 +13,11 @@ jquery
 spiderable
 
 # Atmosphere packages
-blaze-layout
 fast-render
 handlebar-helpers
-iron-router
 jade
 sitemaps
+iron-router
+iron-core
+iron-dynamic-template
+iron-layout
