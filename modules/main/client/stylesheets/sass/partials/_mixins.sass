@@ -4,17 +4,29 @@
 // Layout >> Mixins
 
 
-@mixin sprite-background-simple($sprite, $name)
+@mixin background-image($size)
+  display: inline-block
+  height: image-height($size)
+  width: image-width($size)
+  background-image: image-url($size)
+
+
+@mixin background-image-set($size, $doubleSize)
+  display: inline-block
+  height: image-height($size)
+  width: image-width($size)
+  background-image: image-url($size)
+  background-image: -webkit-image-set(image-url($size) 1x, image-url($doubleSize) 2x)
+  background-image: image-set(image-url($size) 1x, image-url($doubleSize) 2x)
+
+
+@mixin sprite-background($sprite, $name)
+  display: inline-block
   background-image: sprite-url($sprite)
   background-position: sprite-position($sprite, $name)
   background-repeat: no-repeat
   height: image-height(sprite-file($sprite, $name))
   width: image-width(sprite-file($sprite, $name))
-
-
-@mixin sprite-background($sprite, $name)
-  display: inline-block
-  +sprite-background-simple($sprite, $name)
 
 
 @mixin input-placeholder
