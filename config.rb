@@ -14,5 +14,9 @@ http_fonts_path = http_path + 'fonts/'
 css_dir = 'modules/main/client/stylesheets/css/'
 sass_dir = 'modules/main/client/stylesheets/sass/'
 fonts_path = 'public/fonts/'
+
 images_path = 'public/images/'
+images_dir = images_path
 generated_images_dir = images_path
+
+http_images_path = '/images/'

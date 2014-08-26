@@ -5,80 +5,82 @@
 
 
 .alert
-  position: fixed
-  z-index: 100
-  width: 100%
-  bottom: 0
-  padding: 10px 0
-  border-top: 1px solid #dab56e
-  border-bottom: 1px solid #dab56e
-  background-color: #fdd486
-  color: #877044
-  font-size: (14/16) * 1em
-  +box-shadow(#feefc7 0 1px 0 0 inset)
-  +text-shadow(#ffffff 1px 1px 1px)
-  +opacity(0.98)
+	position: fixed
+	z-index: 10000
+	width: 100%
+	bottom: 0
+	padding: 10px 0
+	border-top: 1px solid #dab56e
+	border-bottom: 1px solid #dab56e
+	background-color: #fdd486
+	color: #877044
+	font-family: 'Roboto Condensed', sans-serif
+	font-size: (14/16) * 1em
+	text-align: left
+	+box-shadow(#feefc7 0 1px 0 0 inset)
+	+text-shadow(#ffffff 1px 1px 1px)
+	+opacity(0.98)
 
-  a
-    text-decoration: underline
+	a
+		text-decoration: underline
 
-  .icon
-    float: left
-    margin: 3px 10px 0 0
-    +sprite-background($main, 'alert-icon')
+	.icon
+		float: left
+		margin: 3px 10px 0 0
+		+background-image-set('main/alert-icon.png', 'main/alert-icon_2x.png')
 
-  .close
-    float: right
-    margin: 3px 0 0 40px
-    cursor: pointer
-    +sprite-background($main, 'alert-close')
+	.close
+		float: right
+		margin: 3px 0 0 40px
+		cursor: pointer
+		+background-image-set('main/alert-close.png', 'main/alert-close_2x.png')
 
 
 .alert-success
-  border-top-color: #778b43
-  border-bottom-color: #778b43
-  background-color: #b6cf61
-  color: #ffffff
-  +box-shadow(#c6e36b 0 1px 0 0 inset)
-  +text-shadow(#4c592a 1px 1px 1px)
+	border-top-color: #778b43
+	border-bottom-color: #778b43
+	background-color: #b6cf61
+	color: #ffffff
+	+box-shadow(#c6e36b 0 1px 0 0 inset)
+	+text-shadow(#4c592a 1px 1px 1px)
 
-  .icon
-    +sprite-background($main, 'alert-icon-success')
+	.icon
+		+background-image-set('main/alert-icon-success.png', 'main/alert-icon-success_2x.png')
 
-  .close
-    +sprite-background($main, 'alert-close-success')
+	.close
+		+background-image-set('main/alert-close-success.png', 'main/alert-close-success_2x.png')
 
 
 .alert-warning
-  border-top-color: #c68223
-  border-bottom-color: #c68223
-  background-color: #ffbe40
-  color: #ffffff
-  +box-shadow(#ffe5ae 0 1px 0 0 inset)
-  +text-shadow(#633d07 1px 1px 1px)
+	border-top-color: #c68223
+	border-bottom-color: #c68223
+	background-color: #ffbe40
+	color: #ffffff
+	+box-shadow(#ffe5ae 0 1px 0 0 inset)
+	+text-shadow(#633d07 1px 1px 1px)
 
-  .icon
-    +sprite-background($main, 'alert-icon-warning')
+	.icon
+		+background-image-set('main/alert-icon-warning.png', 'main/alert-icon-warning_2x.png')
 
-  .close
-    +sprite-background($main, 'alert-close-warning')
+	.close
+		+background-image-set('main/alert-close-warning.png', 'main/alert-close-warning_2x.png')
 
 
 .alert-error
-  border-top-color: #8d312d
-  border-bottom-color: #8d312d
-  background-color: #e16660
-  color: #ffffff
-  +box-shadow(#feb3b0 0 1px 0 0 inset)
-  +text-shadow(#731f1c 1px 1px 1px)
+	border-top-color: #8d312d
+	border-bottom-color: #8d312d
+	background-color: #e16660
+	color: #ffffff
+	+box-shadow(#feb3b0 0 1px 0 0 inset)
+	+text-shadow(#731f1c 1px 1px 1px)
 
-  .icon
-    +sprite-background($main, 'alert-icon-error')
+	.icon
+		+background-image-set('main/alert-icon-error.png', 'main/alert-icon-error_2x.png')
 
-  .close
-    +sprite-background($main, 'alert-close-error')
+	.close
+		+background-image-set('main/alert-close-error.png', 'main/alert-close-error_2x.png')
 
 
 .alert-success, .alert-warning, .alert-error
-  a
-    color: #ffffff
+	a
+		color: #ffffff
