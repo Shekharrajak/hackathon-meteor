@@ -1,9 +1,0 @@
-{
-  "packages": {
-    "iron-router": {},
-    "handlebar-helpers": {},
-    "jade": {},
-    "fast-render": {},
-    "sitemaps": {}
-  }
-}
