@@ -14,5 +14,4 @@ meteorhacks:fast-render@1.0.0
 raix:handlebar-helpers@0.1.1
 gadicohen:sitemaps@0.0.17
 iron:router
-waitingkuo:jade
-
+mquandalle:jade
